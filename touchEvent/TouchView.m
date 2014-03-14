@@ -37,22 +37,22 @@
     if ( distanceHorizontal > distanceVertical && distanceHorizontal >= 50) {
         if ( endPoint.x > startPoint.x ) {
             NSLog(@"Right");
-            self.backgroundColor = [UIColor blackColor];
+         [self.delegate touchEvent:TOUCH_EVENT_RIGHT];
         } else {
             NSLog(@"Left");
-            self.backgroundColor = [UIColor yellowColor];
+         [self.delegate touchEvent:TOUCH_EVENT_LEFT];
         }
     } else if ( distanceHorizontal <= distanceVertical && distanceVertical >= 50){
         if ( endPoint.y > startPoint.y ) {
             NSLog(@"Down");
-            self.backgroundColor = [UIColor blueColor];
+            [self.delegate touchEvent:TOUCH_EVENT_DOWN];
         } else {
             NSLog(@"Up");
-            self.backgroundColor = [UIColor redColor];
+         [self.delegate touchEvent:TOUCH_EVENT_UP];
         }
     } else{
            NSLog(@"Tap");
-         self.backgroundColor = [UIColor whiteColor];
+         [self.delegate touchEvent:TOUCH_EVENT_TAP];
     }
  }
 

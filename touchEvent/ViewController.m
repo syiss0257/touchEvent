@@ -18,6 +18,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    ((TouchView*)(self.view)).delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +28,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)touchEvent:(TOUCH_EVENT)eventType{
+       
+    switch (eventType) {
+        case TOUCH_EVENT_TAP:
+            self.view.backgroundColor = [UIColor greenColor];
+            break;
+        case TOUCH_EVENT_RIGHT:
+            self.view.backgroundColor = [UIColor redColor];
+            break;
+        case TOUCH_EVENT_LEFT:
+            self.view.backgroundColor = [UIColor grayColor];
+            break;
+        case TOUCH_EVENT_UP:
+            self.view.backgroundColor = [UIColor blueColor];
+            break;
+        case TOUCH_EVENT_DOWN:
+            self.view.backgroundColor = [UIColor yellowColor];
+            break;
+            
+        default:
+            break;
+    }
+  }
+
 
 @end

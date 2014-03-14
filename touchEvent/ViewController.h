@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TouchView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<TouchViewDelegate>
 
 @end
